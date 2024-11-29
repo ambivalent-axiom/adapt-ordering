@@ -1,0 +1,17 @@
+{
+  "name": "adapt-ordering",
+  "version": "1.0.0",
+  "author": "ambax, Digify <ambaxiom@proton.me>",
+  "framework": ">=5",
+  "homepage": "https://github.com/ambivalent-axiom/adapt-ordering",
+  "issues": "https://github.com/ambivalent-axiom/adapt-ordering",
+  "component": "ordering",
+  "displayName": "Question ordering",
+  "description": "Component for question sentence ordering.",
+  "main": "/js/adapt-ordering.js",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPL-3.0"
+}

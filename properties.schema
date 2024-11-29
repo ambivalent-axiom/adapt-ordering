@@ -1,0 +1,166 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": [
+        "full-width",
+        "half-width",
+        "both"
+      ],
+      "default": "both",
+      "editorOnly": true
+    },
+    "_isRandom": {
+      "type": "boolean",
+      "required": true,
+      "default": false,
+      "title": "Random order of elements",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "This will override set element order with random order."
+    },
+    "_attempts": {
+      "type": "number",
+      "required": true,
+      "default": 1,
+      "title": "Attempts",
+      "inputType": "Number",
+      "validators": [
+        "required",
+        "number"
+      ],
+      "help": "How many attempts the learner is allowed."
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Elements",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "text": {
+            "type": "string",
+            "required": true,
+            "default": "",
+            "inputType": "Text",
+            "validators": [],
+            "title": "Text",
+            "help": "Elements text",
+            "translatable": true
+          },
+          "position": {
+            "type": "number",
+            "required": true,
+            "default": "",
+            "title": "Unique order number (correct order)",
+            "inputType": "Number",
+            "validators": [],
+            "help": "Where block should be in the correct order."
+          }
+        }
+      }
+    },
+    "_feedback": {
+      "type": "object",
+      "required": false,
+      "title": "Feedback",
+      "properties": {
+        "correct": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Correct answer case",
+          "inputType": "TextArea",
+          "validators": [],
+          "help": "Feedback in case of correct answer",
+          "translatable": true
+        },
+        "incorrect": {
+          "type": "string",
+          "required": false,
+          "default": "",
+          "title": "Incorrect answer",
+          "inputType": "TextArea",
+          "validators": [],
+          "help": "Feedback in case of incorrect answer",
+          "translatable": true
+        }
+      }
+    },
+    "_buttons": {
+    "type": "object",
+    "title": "Buttons",
+    "required": false,
+    "properties": {
+        "_submit": {
+            "type": "object",
+            "title": "Submit",
+            "properties": {
+                "buttonText": {
+                    "type": "string",
+                    "required": false,
+                    "default": "",
+                    "title": "",
+                    "inputType": "QuestionButton",
+                    "validators": [],
+                    "help": "Button label text for the submit button",
+                    "translatable": true
+                },
+                "ariaLabel": {
+                    "type": "string",
+                    "required": false,
+                    "default": "",
+                    "title": "",
+                    "inputType": "QuestionButton",
+                    "validators": [],
+                    "help": "Aria label for the submit button",
+                    "translatable": true
+                }
+            }
+        },
+        "_showFeedback": {
+          "type": "object",
+          "title": "Show Feedback",
+          "properties": {
+            "buttonText": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Button label text to show feedback",
+              "translatable": true
+            },
+            "ariaLabel": {
+              "type": "string",
+              "required": false,
+              "default": "",
+              "title": "",
+              "inputType": "QuestionButton",
+              "validators": [],
+              "help": "Aria label for the show feedback button",
+              "translatable": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
