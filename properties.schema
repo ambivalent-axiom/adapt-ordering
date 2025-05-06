@@ -34,6 +34,15 @@
       "validators": [],
       "help": "This will override set element order with random order."
     },
+    "requireCorrectOrder": {
+      "type": "boolean",
+      "required": true,
+      "default": true,
+      "title": "Require correct order for completion",
+      "inputType": "Checkbox",
+      "validators": [],
+      "help": "Whether or not order of items needs to be correct to have SCORM marked as completed"
+    },
     "_attempts": {
       "type": "number",
       "required": true,

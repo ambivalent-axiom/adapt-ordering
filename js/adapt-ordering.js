@@ -69,6 +69,9 @@ define([
       if (this.answers.indexOf(false) !== -1) {
         this.showFeedback('incorrect');
         this.model.set('_isCorrect', false);
+        if (this.model.get('requireCorrectOrder') === false) {
+          this.setCompletionStatus();
+        }
       } else {
         this.showFeedback('correct');
         this.model.set('_isCorrect', true);
